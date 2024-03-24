@@ -1,0 +1,67 @@
+{
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "next/core-web-vitals",
+    "next",
+    "prettier",
+    "plugin:import/typescript",
+    "plugin:import/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "jsx-a11y",
+    "simple-import-sort"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": ["./tsconfig.json"]
+  },
+  "rules": {
+    "prettier/prettier": ["error"],
+    "react/function-component-definition": [
+      2,
+      { "namedComponents": "arrow-function" }
+    ],
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          ["^react", "^@?\\w"],
+          ["^@emotion", "^@chakra"],
+          ["routes"],
+          [
+            "^hooks",
+            "^store",
+            "^store/hooks",
+            "^store/actions",
+            "^store/reducers"
+          ],
+          ["^helpers", "^utils"],
+          ["^constants", "^types"],
+          ["^assets"],
+          ["^styles"],
+          [
+            "^(@|components)(/.*|$)",
+            "^(@|ui)(/.*|$)",
+            "^./components",
+            "^./ui",
+            "^\\.\\.(?!/?$)",
+            "^\\.\\./?$",
+            "^\\./(?=.*/)(?!/?$)",
+            "^\\.(?!/?$)",
+            "^\\./?$"
+          ],
+          ["^\\u0000"],
+          ["^.+\\.?(schema)$"]
+        ]
+      }
+    ]
+  }
+}
